@@ -1,0 +1,53 @@
+﻿@model RegisterVM
+
+
+<div class="card">
+    <div class="card-header">
+        <h3>Yeni Kullanici</h3>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+    <div class="card-body">
+        <form asp-action="Register" method="post">
+
+            <div class="mb-3">
+                <label asp-for="@Model.UserName" class="form-label">Kullainici Kodu</label>
+                <input type="text" asp-for="@Model.UserName" class="form-control"/>
+                <span asp-validation-for="@Model.UserName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="@Model.Email" class="form-label">Email</label>
+                <input type="text" asp-for="@Model.Email" class="form-control" />
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Password" class="form-label">Password</label>
+                <input type="text" asp-for="@Model.Password" class="form-control" />
+                <span asp-validation-for="@Model.Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="@Model.RePassword" class="form-label">Re Password</label>
+                <input type="text" asp-for="@Model.RePassword" class="form-control" />
+                <span asp-validation-for="@Model.RePassword" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="@Model.TcNo" class="form-label">TcNo</label>
+                <input type="text" asp-for="@Model.TcNo" class="form-control" />
+                <span asp-validation-for="@Model.TcNo" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+
+        </form>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+}
